@@ -10,12 +10,8 @@
     </style>
 </head>
 <body>
-<h1>WELCOME TO SPRING SECURITY APP</h1>
-<a href="/profile/index">PROFILE PAGE</a>
-<a href="/admin/index">ADMIN PAGE</a>
-<a href="/login">LOGIN PAGE</a>
-<a href="/registration">REGISTRATION</a>
-<a href="/users/search">Search Users</a>
+<h1>WELCOME TO SPRING SECURITY APP - MVC</h1>
+
 
 <%@include file="templates/navbar.jsp"%>
 

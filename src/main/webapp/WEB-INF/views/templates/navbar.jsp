@@ -34,14 +34,24 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="?page=home">Home</a>
+                            <a class="nav-link" href="/">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="?page=login">Login</a>
+                            <a class="nav-link" href="/profile/index">Login</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="?page=register">Register</a>
+                            <a class="nav-link" href="/registration">Register</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/profile/index">Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/admin/index">Admin</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/users/search">Search User</a>
+                        </li>
+
                     </ul>
                 </div>
             </c:otherwise>

@@ -12,7 +12,6 @@ public class Roles {
     private Long id;
     private String role;
 
-
     public Roles(){}
     public Roles(String role){
         this.role=role;

@@ -6,11 +6,6 @@
 </head>
 <body>
 
-
-
-
-
-<%@include file="/WEB-INF/views/templates/navbar.jsp"%>
 <!-- Page Content -->
 <div class="container" style="min-height: 700px;">
     <div class="row">
@@ -20,17 +15,6 @@
             </h1>
             <div class="alert alert-danger" style="display:none;" role="alert" id = "message">
             </div>
-
-<%--            <form action="/profile/registration1" method="post">--%>
-<%--                EMAIL : <input type="email" name="user_email">--%>
-<%--                PASSWORD : <input type="password" name="user_password">--%>
-<%--                Full Name : <input type="text" name="full_name">--%>
-<%--                Gender :    <input type="text" name="gender">--%>
-<%--                Country : <input type="text" name="country">--%>
-<%--                City : <input type="text" name="city">--%>
-<%--                Role : <input type="text" name="role">--%>
-<%--                <button>SIGN IN</button>--%>
-<%--            </form>--%>
 
             <form action="/profile/registration1" method="post">
                 <div class="form-group row">
@@ -81,7 +65,6 @@
                     </div>
                 </div>
             </form>
-
 
         </div>
     </div>

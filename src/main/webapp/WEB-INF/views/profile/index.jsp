@@ -3,9 +3,16 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <html>
 <head>
-    <title>Title</title>
+    <title>Profile</title>
+    <%@include file="/WEB-INF/views/templates/head.jsp"%>
+    <style>
+        img{
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
+<%@include file="/WEB-INF/views/templates/navbar.jsp"%>
 <h1>
     PROFILE PAGE OF ${user.fullname}
 </h1>
@@ -25,6 +32,12 @@
 
 
 
+
+
+<%@include file="/WEB-INF/views/templates/footer.jsp"%>
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>

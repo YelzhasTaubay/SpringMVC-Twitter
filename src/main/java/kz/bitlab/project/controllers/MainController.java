@@ -56,15 +56,6 @@ public class MainController {
         List<Tweets> allTweets= tweetsDAO.getAllTweets();
         List<Comments> allComments= commentsDAO.getAllComments();
 
-//        boolean userOnline;
-//        if (getUserData()!=null){
-//            userOnline=true;
-//        }else {
-//            userOnline=false;
-//        }
-//
-//        mw.addObject("userOnline",userOnline);
-
         mw.addObject("allTweets",allTweets);
         mw.addObject("allComments",allComments);
         return mw;

@@ -6,7 +6,6 @@ import java.util.Set;
 @Entity
 @Table(name="followers")
 public class Followers {
-
    // followers (id, user_id, follower_id)
 
     @Id

@@ -70,14 +70,9 @@ public class UserController {
 
         for (int i = 0; i <allUsers.size(); i++) {
             for (int j = 0; j < alreadyFollowed.size(); j++) {
-                //if (allUsers.get(i).getId()!=alreadyFollowed.get(j).getId())
                     notFollowed.add(allUsers.get(i));
             }
         }
-
-        Set<Users> usersSet=new HashSet<>(notFollowed);
-        notFollowed.clear();
-        notFollowed.addAll(usersSet);
 
         for (int i = 0; i < notFollowed.size(); i++) {
             System.out.println(notFollowed.get(i).getEmail()+"    ----");
@@ -94,9 +89,6 @@ public class UserController {
     public ModelAndView index5(@PathVariable(name = "id")Long id){
         ModelAndView mw=new ModelAndView("users/profile");
         Users user=userDAO.getUserById(id);
-
-
-
 
         return mw;
     }
@@ -144,7 +136,6 @@ public class UserController {
     @RequestMapping(value = "/users/delete/{id}",method = RequestMethod.GET)
     public ModelAndView index4(@PathVariable(name = "id")Long id){
         ModelAndView mw=new ModelAndView("users/search");
-
 
             Followers follower = followersDAO.getFollowById(id);
             followersDAO.unFollowOfUser(follower);
