@@ -32,6 +32,7 @@ public class Users {
     @ManyToMany(fetch = FetchType.EAGER)
     private Set<Roles> roles;
 
+    //Here is to make changes
 
     @OneToMany(mappedBy="to")
     private List<Followers> followers;
