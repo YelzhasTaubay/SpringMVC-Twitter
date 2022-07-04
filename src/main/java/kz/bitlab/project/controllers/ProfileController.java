@@ -142,25 +142,14 @@ public class ProfileController {
     @RequestMapping(value = "/readmore/{id}",method = RequestMethod.GET)
     public ModelAndView readmore(@PathVariable(name = "id")Long id){
         ModelAndView mw=new ModelAndView("readmore/index");
-
         Tweets tweet=tweetsDAO.getTweetById(id);
         List<Comments> allComments= commentsDAO.getAllComments();
-
         List<Comments> thisComments=new ArrayList<>();
         for (int i = 0; i < allComments.size(); i++) {
             if (allComments.get(i).getTweet().getId()==tweet.getId()){
                 thisComments.add(allComments.get(i));
             }
         }
-
-//        boolean online=false;
-//        if (getUserData().getId()==tweet.getAuthor().getId() || getUserData().getId()!=tweet.getAuthor().getId()){
-//            online=true;
-//        }else {
-//            online=false;
-//        }
-
-        //mw.addObject("online",online);
         mw.addObject("thisComments",thisComments);
         mw.addObject("tweet",tweet);
         return  mw;

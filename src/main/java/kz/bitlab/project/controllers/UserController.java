@@ -32,7 +32,6 @@ public class UserController {
     @Autowired
     FollowersDAO followersDAO;
 
-
     public Users getUserData(){
         Users user = null;
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -68,14 +67,12 @@ public class UserController {
             }
         }
 
-        for (int i = 0; i <allUsers.size(); i++) {
-            for (int j = 0; j < alreadyFollowed.size(); j++) {
+        for (int i = 0; i < allUsers.size(); i++) {
+            for (int j=0;j<alreadyFollowed.size();i++){
+                if (allUsers.get(i).getId()!=alreadyFollowed.get(j).getId()){
                     notFollowed.add(allUsers.get(i));
+                }
             }
-        }
-
-        for (int i = 0; i < notFollowed.size(); i++) {
-            System.out.println(notFollowed.get(i).getEmail()+"    ----");
         }
 
         mw.addObject("alreadyFollowed",alreadyFollowed);

@@ -63,7 +63,7 @@ public class UserDAOImpl implements UserDAO{
 
 
     @Override
-    public void addUser(Users user) {
+    public void addUser(Users user){
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
