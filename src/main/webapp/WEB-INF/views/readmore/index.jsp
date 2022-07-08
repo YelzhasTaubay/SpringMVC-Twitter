@@ -25,43 +25,48 @@
         <div class="col-md-8">
 
             <h1 class="my-4">
-                ${blog.title}
+                ${tweet.title}
             </h1>
             <p>
-                ${blog.shortContent}
+                ${tweet.shortContent}
             </p>
             <p>
-                ${blog.content}
+                ${tweet.content}
             </p>
             <b>
-                Posted on ${blog.postDate} by
-                <a href="#">${blog.author.fullName}</a>
+                Posted on ${tweet.postDate}
             </b>
             <br>
-            <c:choose>
-                <c:when test="${userOnline}">
-                    <div class="row mt-3">
-                        <div class="col-12">
-                            <textarea rows="2" class="form-control" id = "comment"></textarea>
-                        </div>
-                    </div>
-                    <div class="row mt-3">
-                        <div class="col-12">
-                            <button type="button" id="add_comment_button" class="btn btn-info">Add Comment</button>
-                        </div>
-                    </div>
-                </c:when>
-            </c:choose>
-            <br>
-            <div id = "comments_list">
-            </div>
-            <br><br>
         </div>
 
+        <div class="col-md-8">
 
-        <%@include file="/WEB-INF/views/templates/sidebar.jsp"%>
+            <c:forEach items="${thisComments}" var="com">
+            <h1 class="my-4">
+                ${com.comment}
+            </h1>
+            <p>
+                ${com.postDate}
+            </p>
+            <p>
+                ${com.author.fullname}
+            </p>
+            <br>
+        </div
+        </c:forEach>
 
     </div>
+
+
+        <form action="/profile/comment" method="post">
+            <textarea rows="3" name="area"></textarea>
+            <input type="hidden" name="tweet_id" value="${tweet.id}">
+            <button type="submit">Add Comment</button>
+        </form>
+
+
+
+
 
 </div>
 <!-- /.container -->

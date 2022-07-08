@@ -144,7 +144,7 @@ public class ProfileController {
         ModelAndView mw=new ModelAndView("readmore/index");
         Tweets tweet=tweetsDAO.getTweetById(id);
         List<Comments> allComments= commentsDAO.getAllComments();
-        List<Comments> thisComments=new ArrayList<>();
+        ArrayList<Comments> thisComments=new ArrayList<>();
         for (int i = 0; i < allComments.size(); i++) {
             if (allComments.get(i).getTweet().getId()==tweet.getId()){
                 thisComments.add(allComments.get(i));
@@ -157,17 +157,12 @@ public class ProfileController {
 
     @RequestMapping(value = "/profile/comment",method = RequestMethod.POST)
     public ModelAndView addcom(@RequestParam(name = "area")String area,
-                               @RequestParam(name = "tweet_id")Tweets id){
+                               @RequestParam(name = "tweet_id")long id){
 
-        ModelAndView mw=new ModelAndView("/index");
-        Users user=getUserData();
-
-        System.out.println(area+"    +++"+new Date()+"    ++"+getUserData().getId()+"      ++"+id.getAuthor());
-
-
-        commentsDAO.addComment(new Comments(null,area,new Date(),getUserData(),id));
-
-
+//        Tweets tweet= tweetsDAO.getTweetById((long) id);
+//
+//        Comments comment=commentsDAO.addComment(null,area,new Date(),getUserData().getId(),id);
+        ModelAndView mw=new ModelAndView("/readmore/index");
         return  mw;
     }
 
