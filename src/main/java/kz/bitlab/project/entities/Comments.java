@@ -30,13 +30,6 @@ public class Comments {
         this.postDate = postDate;
     }
 
-    public Comments(Long id, String area, Date date, Users userData, Tweets id1) {
-        this.id=id;
-        this.comment=area;
-        this.postDate=date;
-        this.author=userData;
-        this.tweet=id1;
-    }
 
 
     public Long getId() {

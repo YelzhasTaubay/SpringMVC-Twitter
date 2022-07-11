@@ -55,31 +55,16 @@
         </div
         </c:forEach>
 
-
-            <c:choose>
-                <c:when test="${userOnline}">
-                    <div class="row mt-3">
-                        <div class="col-12">
-                            <textarea rows="2" class="form-control" name="area"></textarea>
-                        </div>
-                    </div>
-                    <div class="row mt-3">
-                        <div class="col-12">
-                            <button type="button" id="add_comment_button" class="btn btn-info">Add Comment</button>
-                        </div>
-                    </div>
-                </c:when>
-            </c:choose>
-            <br>
-            <div id = "comments_list">
-            </div>
-            <br><br>
-
-
-
-
-
     </div>
+    
+    <form action="/profile/comment" method="post">
+        <textarea rows="2" class="form-control" name="area"></textarea>
+        <input type="hidden" name="tweet_id" value="${tweet.id}">
+        <button type="submit">Add Comment</button>
+    </form>
+
+
+
 
 </div>
 <!-- /.container -->
@@ -142,11 +127,7 @@
 
 
 
-<form action="/profile/comment" method="post">
-    <textarea rows="2" class="form-control" name="area"></textarea>
-    <input type="hidden" name="tweet_id" value="${tweet.id}">
-    <button type="submit">Add Comment</button>
-</form>
+
 
 
 

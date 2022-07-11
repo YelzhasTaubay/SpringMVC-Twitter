@@ -56,14 +56,12 @@
         </c:forEach>
 
     </div>
-
-
-        <form action="/profile/comment" method="post">
-            <textarea rows="3" name="area"></textarea>
-            <input type="hidden" name="tweet_id" value="${tweet.id}">
-            <button type="submit">Add Comment</button>
-        </form>
-
+    
+    <form action="/profile/comment" method="post">
+        <textarea rows="2" class="form-control" name="area"></textarea>
+        <input type="hidden" name="tweet_id" value="${tweet.id}">
+        <button type="submit">Add Comment</button>
+    </form>
 
 
 
@@ -129,11 +127,7 @@
 
 
 
-<form action="/profile/comment" method="post">
-    <textarea rows="2" class="form-control" name="area"></textarea>
-    <input type="hidden" name="tweet_id" value="${tweet.id}">
-    <button type="submit">Add Comment</button>
-</form>
+
 
 
 

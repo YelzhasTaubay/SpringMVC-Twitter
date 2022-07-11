@@ -159,9 +159,9 @@ public class ProfileController {
     public ModelAndView addcom(@RequestParam(name = "area")String area,
                                @RequestParam(name = "tweet_id")long id){
 
-//        Tweets tweet= tweetsDAO.getTweetById((long) id);
-//
-//        Comments comment=commentsDAO.addComment(null,area,new Date(),getUserData().getId(),id);
+        Tweets tweets=tweetsDAO.getTweetById(id);
+        commentsDAO.addComment(new Comments(null,tweets,getUserData(),area,new Date()));
+
         ModelAndView mw=new ModelAndView("/readmore/index");
         return  mw;
     }
