@@ -48,7 +48,6 @@ public class MainController {
         return user;
     }
 
-
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public ModelAndView index(){
         ModelAndView mw = new ModelAndView("index");
